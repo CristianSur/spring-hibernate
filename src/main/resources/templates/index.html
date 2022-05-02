@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <link rel="stylesheet" th:href="@{../css/main.css}" />
+</head>
+
+<body>
+<header th:replace="all_products :: header"></header>
+
+<form action="save" method="post">
+    <table style="width:40%">
+<!--        <tr>-->
+<!--            <td><label>ID of the product</label> </td>-->
+<!--            <td><input type="text" name="id"></td>-->
+<!--        </tr>-->
+        <tr>
+            <td><label>Name of the product</label> </td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td><label>Quantity of products </label> </td>
+            <td><input type="text" name="quantity"></td>
+        </tr>
+        <tr>
+            <td><label>Price of the product</label> </td>
+            <td><input type="text" name="price"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+<a href="/all">Click to see al products</a>
+
+</body>
+</html>
