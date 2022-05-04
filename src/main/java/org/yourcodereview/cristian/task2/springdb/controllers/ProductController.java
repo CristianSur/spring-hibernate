@@ -72,8 +72,8 @@ public class ProductController {
         return "blog";
     }
 
-    @DeleteMapping("/delete/comment/{id}")
-    public String removeComment(@PathVariable int id) {
+    @RequestMapping("/delete/comment/{id}")
+        public String removeComment(@PathVariable int id) {
         commentDao.deleteComment(id);
         return "redirect:/blog";
     }

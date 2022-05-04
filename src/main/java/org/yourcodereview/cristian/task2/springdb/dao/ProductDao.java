@@ -1,5 +1,6 @@
 package org.yourcodereview.cristian.task2.springdb.dao;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class ProductDao {
     }
 
     @Transactional(readOnly = true)
-    public List<Product> all() {
+    public List<Product> all()   {
         Session session = sessionFactory.getCurrentSession();
 
         return session.createQuery("select p from Product p", Product.class)
