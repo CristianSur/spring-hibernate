@@ -83,4 +83,10 @@ public class ProductController {
         model.addAttribute("comment", commentDao.findCommentById(id));
         return "comment_info";
     }
+
+    @GetMapping("/admin")
+    public String admin(Model model) {
+
+        return "all_products";
+    }
 }
