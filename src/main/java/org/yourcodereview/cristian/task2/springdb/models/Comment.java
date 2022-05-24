@@ -3,6 +3,8 @@ package org.yourcodereview.cristian.task2.springdb.models;
 
 
 
+import lombok.*;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -10,6 +12,11 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "Comment")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class Comment {
 
     @Id
@@ -22,34 +29,4 @@ public class Comment {
     @Column(name = "text")
     private String text;
 
-    public Comment() { }
-
-    public Comment(int id, String text) {
-        this.id = id;
-        this.text = text;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "id=" + id +
-                ", text='" + text + '\'' +
-                '}';
-    }
 }
