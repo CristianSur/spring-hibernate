@@ -4,10 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+import org.yourcodereview.cristian.task2.springdb.models.Person;
+import org.yourcodereview.cristian.task2.springdb.repositories.PeopleRepository;
+import org.yourcodereview.cristian.task2.springdb.security.PersonDetails;
 
 import java.util.Optional;
 
-public class PersonDetailsService  extends UserDetailsService {
+@Service
+public class PersonDetailsService implements UserDetailsService {
 
     private final PeopleRepository peopleRepository;
 

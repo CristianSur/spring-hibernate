@@ -28,6 +28,7 @@ import java.util.Properties;
 @ComponentScan("org.yourcodereview.cristian.task2")
 @PropertySource("classpath:hibernate.properties")
 @EnableTransactionManagement //@EnableWebMvc
+@EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
 
     private final Environment env;
@@ -60,7 +61,7 @@ public class SpringConfig implements WebMvcConfigurer {
         return properties;
     }
 
-    @Bean
+    @Bean(name="entityManagerFactory")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
